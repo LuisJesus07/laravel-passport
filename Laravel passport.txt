@@ -1,0 +1,12 @@
+Laravel Passport
+
+laravel passport permite el uso de una api con autentiacion por medio de token, se creea un token al usuario que se logea y el token es unico, se debe de almacenar en el localstorage para poder hacer las peticiones y al hacer logout ese token desaparece. por lo cual el usuario solo tiene acceso a su info con el uso de su token unico
+
+Instalacion
+->composer require laravel/passport "~9.0" (para version 7)
+->php artisan passport:install
+->añadir Laravel\Passport\HasApiTokens al modelo de usuario (o en su defecto a la tabla de los clientes)
+->agregat Passport::routes en AuthServiceProvider
+->en config/auth se hacen los respectivos cambios en guards(documentacion)
+dependiendo de con que modelo se trabaje(Users o algun otro como clients)
+->php artisan passport:client --personal (crear personal access client para poder crear lostokens personales)
